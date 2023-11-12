@@ -44,9 +44,11 @@
 
     const client = createClient({
       host: "localhost:1999",
+      throttle: 16
     });
 
-    room = client.enter<Presence, Storage /* UserMeta, RoomEvent */>(roomId);
+    //@ts-ignore
+    room = client.enter<Presence, Storage /* UserMeta, RoomEvent */>(roomId, {initialPresence: {cursor: null}});
   });
 
   onDestroy(() => {

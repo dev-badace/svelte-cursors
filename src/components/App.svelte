@@ -32,6 +32,7 @@
   // Update cursor presence to current pointer location
   function handlePointerMove(event: PointerEvent) {
     event.preventDefault();
+
     room.updatePresence({
       cursor: {
         x: Math.round(event.clientX),
@@ -46,23 +47,12 @@
       cursor: null,
     });
   }
-
-  const COLORS = [
-    "#E57373",
-    "#9575CD",
-    "#4FC3F7",
-    "#81C784",
-    "#FFF176",
-    "#FF8A65",
-    "#F06292",
-    "#7986CB",
-  ];
 </script>
 
 <main on:pointerleave={handlePointerLeave} on:pointermove={handlePointerMove}>
   <!-- Show the current user's cursor location -->
   <div class="text">
-    {myPresence?.cursor
+    {myPresence.cursor
       ? `${myPresence.cursor.x} × ${myPresence.cursor.y}`
       : "Move your cursor to broadcast its position to other people in the room."}
   </div>

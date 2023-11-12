@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "partykit": "^0.0.32",
-    "partyworks-client": "^0.0.2",
-    "partyworks-server": "^0.0.3"
+    "partyworks-client": "^0.0.3",
+    "partyworks-server": "^0.0.4"
   }
 }
